@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feeder Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: Arial, sans-serif;
+        }
+
+        .header-btn-group button {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin: 0 4px;
+        }
+
+        .feeder-card {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .feeder-status {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #28a745;
+            display: flex;
+            align-items: center;
+        }
+
+        .feeder-status span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #28a745;
+            color: #ffffff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .toggle-section {
+            text-align: center;
+        }
+
+        .toggle-section .form-check-label {
+            font-size: 1rem;
+            margin-left: 8px;
+        }
+
+        .schedule-button {
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 5px 15px;
+            border: none;
+        }
+
+        .nav-tabs .nav-link {
+            font-size: 1rem;
+        }
+
+        .nav-tabs .nav-link.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .table th, .table td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .table tbody tr:nth-child(odd) {
+            background-color: #f9f9c9;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #e5eafc;
+        }
+
+        .date-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .table th {
+            background-color: #f0f4f8;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .table td {
+            padding: 10px;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <!-- Header Section -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4>Kiran Varma</h4>
+        <div class="btn-group header-btn-group" role="group">
+            <button type="button" class="btn btn-outline-primary">1</button>
+            <button type="button" class="btn btn-outline-primary">2</button>
+            <button type="button" class="btn btn-outline-primary">3</button>
+            <button type="button" class="btn btn-outline-primary">4</button>
+            <button type="button" class="btn btn-outline-primary">5</button>
+            <button type="button" class="btn btn-outline-primary">A1</button>
+            <button type="button" class="btn btn-outline-primary">A2</button>
+        </div>
+    </div>
+
+    <!-- Feeder Card -->
+    <div class="feeder-card mb-4">
+        <div>
+            <div class="feeder-status">
+                <span>5</span> Feeder On
+            </div>
+            <p class="mb-0">Total Feed: <strong>465.63 kg</strong></p>
+            <p class="mb-0">Today Feed: <strong>40.38 kg</strong></p>
+            <p class="mb-0">Feed Interval: <strong>60</strong></p>
+            <p class="mb-0">Feed(Kg/hr): <strong>7.50</strong></p>
+        </div>
+        <div class="text-end">
+            <p class="mb-0">Prawn 7703-P</p>
+            <p class="mb-0">(125 gms | 5s)</p>
+            <button class="schedule-button">Schedule</button>
+            <div class="form-check form-switch mt-3 toggle-section">
+                <input class="form-check-input" type="checkbox" id="feederSwitch" checked>
+                <label class="form-check-label" for="feederSwitch">On</label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabs Section -->
+    <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="feed-info-tab" data-bs-toggle="tab" data-bs-target="#feed-info" type="button" role="tab" aria-controls="feed-info" aria-selected="true">Feed Info</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="history-tab" data-bs-toggle="tab" data-bs-target="#history" type="button" role="tab" aria-controls="history" aria-selected="false">History</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="ack-tab" data-bs-toggle="tab" data-bs-target="#ack" type="button" role="tab" aria-controls="ack" aria-selected="false">Acknowledgement</button>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="feed-info" role="tabpanel" aria-labelledby="feed-info-tab">
+            <div class="date-control mb-3">
+                <button class="btn btn-outline-secondary btn-sm">&lt;</button>
+                <span>04/01/2025</span>
+                <button class="btn btn-outline-secondary btn-sm">&gt;</button>
+            </div>
+            <table class="table table-bordered">
+                <thead class="table-light">
+                <tr>
+                    <th>Time</th>
+                    <th>Spinner</th>
+                    <th>Feeder</th>
+                    <th>MC</th>
+                    <th>Feed</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>11:36</td>
+                    <td>E Test</td>
+                    <td>On (App)</td>
+                    <td>1.7</td>
+                    <td>16.88kg</td>
+                </tr>
+                <tr>
+                    <td>11:33</td>
+                    <td>Feeder Empty</td>
+                    <td>On (App)</td>
+                    <td>1.9</td>
+                    <td>16.88kg</td>
+                </tr>
+                <tr>
+                    <td>11:31</td>
+                    <td>E Test</td>
+                    <td>On (App)</td>
+                    <td>1.8</td>
+                    <td>16.88kg</td>
+                </tr>
+                <tr>
+                    <td>11:28</td>
+                    <td>Feeder Empty</td>
+                    <td>On (App)</td>
+                    <td>1.9</td>
+                    <td>16.88kg</td>
+                </tr>
+                <tr>
+                    <td>11:26</td>
+                    <td>E Test</td>
+                    <td>On (App)</td>
+                    <td>1.8</td>
+                    <td>16.88kg</td>
+                </tr>
+                <tr>
+                    <td>11:22</td>
+                    <td>Feeder Empty</td>
+                    <td>On (App)</td>
+                    <td>1.9</td>
+                    <td>16.88kg</td>
+                </tr>
+                <tr>
+                    <td>11:20</td>
+                    <td>E Test</td>
+                    <td>On (App)</td>
+                    <td>1.9</td>
+                    <td>16.88kg</td>
+                </tr>
+                <tr>
+                    <td>11:17</td>
+                    <td>Feeder Empty</td>
+                    <td>On (App)</td>
+                    <td>1.8</td>
+                    <td>16.88kg</td>
+                </tr>
+                <tr>
+                    <td>11:15</td>
+                    <td>E Test</td>
+                    <td>On (App)</td>
+                    <td>1.8</td>
+                    <td>16.88kg</td>
+                </tr>
+                <tr>
+                    <td>11:13</td>
+                    <td>Success</td>
+                    <td>On (App)</td>
+                    <td>2.2</td>
+                    <td>16.88kg</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tab-pane fade" id="history" role="tabpanel" aria-labelledby="history-tab">
+            <p>History content goes here...</p>
+        </div>
+
+        <div class="tab-pane fade" id="ack" role="tabpanel" aria-labelledby="ack-tab">
+            <p>Acknowledgement content goes here...</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

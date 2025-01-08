@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feeder Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h4 {
+            margin: 0;
+        }
+
+        .control-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .control-buttons button {
+            border-radius: 20px;
+            font-size: 0.9rem;
+            padding: 5px 15px;
+        }
+
+        .feeder-card {
+            background-color: #fff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .feeder-details {
+            text-align: left;
+        }
+
+        .feeder-details h5 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .feeder-details p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .feed-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feed-control span {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .feed-control button {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .prawn-details {
+            text-align: right;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <!-- Header Section -->
+    <div class="header">
+        <h4>Kiran Varma</h4>
+        <div class="control-buttons">
+            <button class="btn btn-warning">Change Feed Type</button>
+            <button class="btn btn-primary">Send</button>
+        </div>
+    </div>
+
+    <!-- Feeder Cards -->
+    <div class="feeder-card">
+        <div class="feeder-details">
+            <h5>1</h5>
+            <p>35.00Kg<br>Today Feed</p>
+        </div>
+        <div class="feed-control">
+            <button>-</button>
+            <span>6.5</span>
+            <button>+</button>
+        </div>
+        <div class="prawn-details">
+            <p>Prawn 7703-P<br>125 gms<br>FI-69</p>
+        </div>
+    </div>
+
+    <div class="feeder-card">
+        <div class="feeder-details">
+            <h5>2</h5>
+            <p>32.00Kg<br>Today Feed</p>
+        </div>
+        <div class="feed-control">
+            <button>-</button>
+            <span>5.5</span>
+            <button>+</button>
+        </div>
+        <div class="prawn-details">
+            <p>Prawn 7703-P<br>125 gms<br>FI-81</p>
+        </div>
+    </div>
+
+    <div class="feeder-card">
+        <div class="feeder-details">
+            <h5>3</h5>
+            <p>37.50Kg<br>Today Feed</p>
+        </div>
+        <div class="feed-control">
+            <button>-</button>
+            <span>6.5</span>
+            <button>+</button>
+        </div>
+        <div class="prawn-details">
+            <p>Prawn 7703-P<br>125 gms<br>FI-69</p>
+        </div>
+    </div>
+
+    <div class="feeder-card">
+        <div class="feeder-details">
+            <h5>4</h5>
+            <p>32.00Kg<br>Today Feed</p>
+        </div>
+        <div class="feed-control">
+            <button>-</button>
+            <span>5.5</span>
+            <button>+</button>
+        </div>
+        <div class="prawn-details">
+            <p>Prawn 7703-P<br>125 gms<br>FI-81</p>
+        </div>
+    </div>
+
+    <div class="feeder-card">
+        <div class="feeder-details">
+            <h5>5</h5>
+            <p>40.75Kg<br>Today Feed</p>
+        </div>
+        <div class="feed-control">
+            <button>-</button>
+            <span>7.5</span>
+            <button>+</button>
+        </div>
+        <div class="prawn-details">
+            <p>Prawn 7703-P<br>125 gms<br>FI-60</p>
+        </div>
+    </div>
+
+    <div class="feeder-card">
+        <div class="feeder-details">
+            <h5>A1</h5>
+            <p>38.63Kg<br>Today Feed</p>
+        </div>
+        <div class="feed-control">
+            <button>-</button>
+            <span>7.0</span>
+            <button>+</button>
+        </div>
+        <div class="prawn-details">
+            <p>Prawn 7703-P<br>125 gms<br>FI-64</p>
+        </div>
+    </div>
+
+    <div class="feeder-card">
+        <div class="feeder-details">
+            <h5>A2</h5>
+            <p>37.00Kg<br>Today Feed</p>
+        </div>
+        <div class="feed-control">
+            <button>-</button>
+            <span>7.0</span>
+            <button>+</button>
+        </div>
+        <div class="prawn-details">
+            <p>Prawn 7703-P<br>125 gms<br>FI-64</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

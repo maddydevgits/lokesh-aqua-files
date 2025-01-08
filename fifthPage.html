@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feeder Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f4f8;
+            font-family: Arial, sans-serif;
+        }
+
+        .date-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .table th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .table td {
+            text-align: center;
+            vertical-align: middle;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-4">
+    <!-- Header Section -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4>Kiran Varma</h4>
+    </div>
+
+    <!-- Tabs Section -->
+    <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="feed-tab" data-bs-toggle="tab" data-bs-target="#feed" type="button" role="tab" aria-controls="feed" aria-selected="true">Feed</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="ack-tab" data-bs-toggle="tab" data-bs-target="#ack" type="button" role="tab" aria-controls="ack" aria-selected="false">Acknowledgement</button>
+        </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="feed" role="tabpanel" aria-labelledby="feed-tab">
+            <div class="date-control mb-3">
+                <button class="btn btn-outline-secondary btn-sm">&lt;</button>
+                <span>04/01/2025</span>
+                <button class="btn btn-outline-secondary btn-sm">&gt;</button>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Feeder</th>
+                    <th>Day Feed</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>34.88 kg</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>31.88 kg</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>37.38 kg</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>32.00 kg</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>40.63 kg</td>
+                </tr>
+                <tr>
+                    <td>A1</td>
+                    <td>38.63 kg</td>
+                </tr>
+                <tr>
+                    <td>A2</td>
+                    <td>37.00 kg</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tab-pane fade" id="ack" role="tabpanel" aria-labelledby="ack-tab">
+            <p>Acknowledgement content goes here...</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
